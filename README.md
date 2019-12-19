@@ -22,7 +22,6 @@ To start the server:
 
 ## Progress
 - [x] Create Hello World component
-- [ ] Create Task component
-- [ ] Create ListTask component
+- [x] Create Task component
 - [ ] Beautify with Bootstrap and FontAwesome
 - [ ] CRUD for Task
