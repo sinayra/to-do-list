@@ -3,11 +3,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'task/index'
       post 'task/create'
-      get 'task/show', to: 'task#show'
+      get 'task/show/:id', to: 'task#show'
       get 'task/destroy/:id', to: 'task#destroy'
     end
   end
-  root to: 'static_pages#home'
-  get '/*path' => 'static_pages#home'
+  root 'homepage#index'
+  get '/*path' => 'homepage#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
