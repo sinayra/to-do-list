@@ -1,7 +1,8 @@
 import React from "react";
 import axios from 'axios';
+import Task from './Task'
 
-class Task extends React.Component {
+class TaskList extends React.Component {
     
     constructor(props) {
       super(props);
@@ -30,25 +31,20 @@ class Task extends React.Component {
     }
 
     render() {
-        let taskElem = this.state.tasks.map(c => {
+        let taskElem = this.state.tasks.map(t => {
             return (
-            <li key={c.id}>{c.name} @ {c.date} - {c.is_done}</li>
+                <Task key={t.id} task={t} />
             );
         });
 
-        console.log(this.state)
-
         return (
             <div>
-                <h1>Tasks</h1>
-                <div className="container">
-                    <div className="row">
-                        {taskElem}
-                    </div>
+                <div className="form-check">
+                    {taskElem}
                 </div>
             </div>
         );
     }
 
   }
-  export default Task;
+  export default TaskList;

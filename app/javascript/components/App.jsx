@@ -1,19 +1,18 @@
 import React from 'react';
 
-import Home from '../components/Home'
-import Task from '../components/Task'
 import { BrowserRouter, Route } from 'react-router-dom'
+import TaskList from './Task/TaskList';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-
-    <BrowserRouter>
-      <div>
-        <Route path='/' exact component={Home} />
-        <Route path='/task' component={Task} />
-      </div>
-    </BrowserRouter>
-    
+    <div className="container-fluid">
+        <h1>To-do list</h1>
+        <BrowserRouter>
+          <Route path='/' exact component={TaskList} />
+        </BrowserRouter>
+    </div>
 
   );
 }
